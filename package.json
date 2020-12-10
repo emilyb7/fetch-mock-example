@@ -1,0 +1,11 @@
+{
+  "name": "fetch-mock-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:emilyb7/fetch-mock-example.git",
+  "author": "<emily.bertwistle@fluidly.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fetch-mock": "9.10"
+  }
+}
