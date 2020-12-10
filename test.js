@@ -16,4 +16,16 @@ describe('makes a request', () => {
         await myFetchFunctionWithQuery()
         expect(fetchMock.called()).toBe(true)
     })
+
+    it.skip('returns a different response for different queries', async () => {
+        fetchMock.get(({ url: /my-api/, query: { q: 1 } }), { response: 1 })
+        fetchMock.get(({ url: /my-api/, query: { q: 2 } }), { response: 2 })
+        fetchMock.get(({ url: /my-api/, query: { q: 3 } }), { response: 3 })
+    })
+
+    it('returns a different response when querystring hardcoded in url', async () => {
+        fetchMock.get(({ url: /my-api\?q\=1/ }), { response: 1 })
+        fetchMock.get(({ url: /my-api\?q\=2/ }), { response: 2 })
+        fetchMock.get(({ url: /my-api\?q\=3/ }), { response: 3 })
+    })
 })
